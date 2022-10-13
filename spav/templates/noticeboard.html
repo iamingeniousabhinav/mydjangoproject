@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Noticeboard{% endblock title %}
+{% load static %}
+{% block noticeboard %}
+<section>
+    <div class="container p-2">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header text-center"><strong>Noticeboard</strong></div>
+                    <div class="card-body">
+                        <ul>
+                            {% for n in notice_data %}
+                            <li><a href="/">{{ n.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="card-footer p-0">
+                        <div class="d-flex">
+                            <div class="p-2 flex-grow-1">Last Updated : DD/MM/YYYY</div>
+                            <div class="p-2">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination">
+                                      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                    </ul>
+                                  </nav>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock noticeboard %}
