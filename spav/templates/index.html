@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block pagetitle %} Home Page {% endblock pagetitle %}
+{% block index %}
+<section>
+    <h1 class="text-center bg-primary text-light p-4">Home Page</h1>
+    <div class="container-fluid p-2">
+        <div class="row g-2">
+            {% for p in projects %}
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-header"><img src="{{ p.banner.url }}" alt="{{p.title}}" class="card-img"></div>
+                    <div class="card-body">
+                        <p>{{ p.about | slice:100 }}</p>
+                    </div>
+                    <div class="card-footer">{{ p.date }} &nbsp; &#8594; <a href="{{ p.url }}">View</a></div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock index %}
