@@ -5,7 +5,7 @@ from .models import *
 
 # call your data from models
 
-notice_data = Noticeboard.objects.all()
+notice_data = Noticeboard.objects.all().order_by('-upload_date')
 
 
 context = {
@@ -15,6 +15,12 @@ context = {
 # Create your views here.
 def index(request):
     return render(request, 'index.html', context)
+
+def about(request):
+    return render(request, 'about.html', context)
+
+def campus_view(request):
+    return render(request, 'campus.html', context)
 
 def noticeboard(request):
     return render(request, 'noticeboard.html', context)

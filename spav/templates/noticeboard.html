@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <ul class="list-unstyled">
                             {% for n in notice_data %}
-                            <li><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;&nbsp;<a class="text-decoration-none" href="/">{{ n.title }}</a></li>
+                            <li><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;<a class="text-decoration-none" href="{{ n.file.url }}" target="_blank">{{ n.title }}</a></li>
                             {% endfor %}
                         </ul>
                     </div>
