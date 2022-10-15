@@ -9,9 +9,9 @@
                 <div class="card">
                     <div class="card-header text-center"><strong>Noticeboard</strong></div>
                     <div class="card-body">
-                        <ul>
+                        <ul class="list-unstyled">
                             {% for n in notice_data %}
-                            <li><a href="/">{{ n.title }}</a></li>
+                            <li><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;&nbsp;<a class="text-decoration-none" href="/">{{ n.title }}</a></li>
                             {% endfor %}
                         </ul>
                     </div>

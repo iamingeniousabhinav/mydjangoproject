@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Noticeboard{% endblock title %}
+{% load static %}
+{% block calculator %}
+<br>
+<section>
+    <h1 class="text-center border-bottom p-2">Calculator</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <form  method="post">
+                            {% csrf_token %}
+                            <input class="form-control" type="text" name="num1" placeholder="First Number">
+                            <select name="opr" class="form-control">
+                                <option value="+">+</option>
+                                <option value="-">-</option>
+                                <option value="*">*</option>
+                                <option value="/">/</option>
+                            </select>
+                            <input class="form-control" type="text" name="num2" placeholder="Second Number">
+                            <br>
+                            <button class="btn btn-primary" type="submit">Calculate</button>
+                        </form>    
+                    </div>
+                </div>            
+            </div>
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Result is : {{ c }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock calculator %}
