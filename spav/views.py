@@ -6,15 +6,29 @@ from .models import *
 # call your data from models
 
 notice_data = Noticeboard.objects.all().order_by('-upload_date')
-
+flashNewsData = FlashNews.objects.all().order_by('-upload_date')
+tenderData = Tender.objects.all().order_by('-upload_date')
+recruitmentData = Recruitment.objects.all().order_by('-upload_date')
+upcomingLectures = UpcomingLecture.objects.all().order_by('-upload_date')
+circularsData = Circulars.objects.all().order_by('-upload_date')
+weatherData = WeatherReport.objects.all().order_by('-upload_date')
 
 context = {
-    'notice_data' : notice_data
+    'notice_data' : notice_data,
+    'tender':tenderData,
+    'flashNews':flashNewsData,
+    'recruitment':recruitmentData,
+    'circulars':circularsData,
+    'upcomingLectures':upcomingLectures,
+    'weather':weatherData,
 }
 
 # Create your views here.
 def index(request):
     return render(request, 'index.html', context)
+
+def weather_report(request):
+    return render(request, 'weather_report.html', context)
 
 def about(request):
     return render(request, 'about.html', context)

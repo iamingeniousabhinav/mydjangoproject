@@ -56,6 +56,24 @@
 
 <section>
     <div class="container-fluid">
+        <div class="row p-1">
+            <div class="card p-0">
+                <div class="card-body p-0 ">
+                    <ul class="d-flex list-unstyled">
+                        {% for f in flashNews %}
+                        <marquee behavior="scroll" direction="left">
+                            <li class="p-2"><a class="text-decoration-none" href="{{ f.file.url }}">{{ f.flash_news_title }}</a></li>
+                        </marquee>
+                        {% endfor%}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container-fluid">
         <div class="row g-2 p-2">
             <div class="col-sm-9">
                 <div class="card">
@@ -82,7 +100,7 @@
                         </nav>
                     </div>
                     <style>
-                        .notification{
+                        .notification {
                             height: 445px;
                         }
                     </style>
@@ -92,80 +110,51 @@
                                 aria-labelledby="nav-latestnews-tab" tabindex="0">
                                 <ul class="list-unstyled">
                                     {% for n in notice_data %}
-                                    <li><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;<a class="text-decoration-none" href="{{ n.file.url }}" target="_blank">{{ n.title }}</a></li>
-                                    <li><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;<a class="text-decoration-none" href="{{ n.file.url }}" target="_blank">{{ n.title }}</a></li>
-                                    <li><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;<a class="text-decoration-none" href="{{ n.file.url }}" target="_blank">{{ n.title }}</a></li>
-                                    <li><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;<a class="text-decoration-none" href="{{ n.file.url }}" target="_blank">{{ n.title }}</a></li>
-                                    <li><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;<a class="text-decoration-none" href="{{ n.file.url }}" target="_blank">{{ n.title }}</a></li>
-                                    <li><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;<a class="text-decoration-none" href="{{ n.file.url }}" target="_blank">{{ n.title }}</a></li>
-                                    <li><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;<a class="text-decoration-none" href="{{ n.file.url }}" target="_blank">{{ n.title }}</a></li>
-                                    <li><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;<a class="text-decoration-none" href="{{ n.file.url }}" target="_blank">{{ n.title }}</a></li>
-                                    <li><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;<a class="text-decoration-none" href="{{ n.file.url }}" target="_blank">{{ n.title }}</a></li>
-                                    <li><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;<a class="text-decoration-none" href="{{ n.file.url }}" target="_blank">{{ n.title }}</a></li>
-                                    <li><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;<a class="text-decoration-none" href="{{ n.file.url }}" target="_blank">{{ n.title }}</a></li>
-                                    <li><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;<a class="text-decoration-none" href="{{ n.file.url }}" target="_blank">{{ n.title }}</a></li>
+                                    <li><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;<a
+                                            class="text-decoration-none" href="{{ n.file.url }}"
+                                            target="_blank">{{ n.title }}</a></li>
                                     {% endfor %}
                                 </ul>
                             </div>
                             <div class="tab-pane fade" id="nav-circularorder" role="tabpanel"
                                 aria-labelledby="nav-circularorder-tab" tabindex="0">
-                                <ul>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
+                                <ul class="list-unstyled">
+                                    {% for c in circulars %}
+                                    <li><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;<a
+                                            class="text-decoration-none" href="{{ c.file.url }}"
+                                            target="_blank">{{ c.title }}</a></li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                             <div class="tab-pane fade" id="nav-tender" role="tabpanel" aria-labelledby="nav-tender-tab"
                                 tabindex="0">
-                                <ul>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
+                                <ul class="list-unstyled">
+                                    {% for t in tender %}
+                                    <li><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;<a
+                                            class="text-decoration-none" href="{{ t.file.url }}"
+                                            target="_blank">{{ t.title }}</a></li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                             <div class="tab-pane fade" id="nav-recruitment" role="tabpanel"
                                 aria-labelledby="nav-recruitment-tab" tabindex="0">
-                                <ul>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
+                                <ul class="list-unstyled">
+                                    {% for r in recruitment %}
+                                    <li><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;<a
+                                            class="text-decoration-none" href="{{ r.file.url }}"
+                                            target="_blank">{{ r.title }}</a></li>
+                                    {% endfor %}
                                 </ul>
                             </div>
 
                             <div class="tab-pane fade" id="nav-upcominglect" role="tabpanel"
                                 aria-labelledby="nav-upcominglect-tab" tabindex="0">
-                                <ul>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
-                                    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>
+                                <ul class="list-unstyled">
+                                    {% for u in upcomingLectures %}
+                                    <li><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;<a
+                                            class="text-decoration-none" href="{{ u.file.url }}"
+                                            target="_blank">{{ u.lecture_title }}</a></li>
+                                    {% endfor %}
                                 </ul>
                             </div>
 
@@ -175,19 +164,27 @@
             </div>
             <div class="col-sm-3">
                 <div class="card">
-                    <div class="card-header"><strong>Activities &amp; News Letter</strong></div>
+                    <div class="card-header fs-6 fw-bold">Department Of Architecture</div>
                     <div class="card-body">
-                        Department Of Architecture <br>
-                        Academic Prospectus Newsletter - July 2021| Archive Activities <br>
-                        Department of Planning <br>
-                        Academic Prospectus Newsletter-July- December 2021|Archive Activities <br>
+                        <a class="text-decoration-none" href="/">Academic Prospectus</a> <br> <a
+                            class="text-decoration-none" href="/">Newsletter - July 2021</a> <br> <a
+                            class="text-decoration-none" href="/">Activities</a>
+
+                    </div>
+                    <div class="card-header fs-6 fw-bold">Department Of Planning</div>
+                    <div class="card-body">
+                        <a class="text-decoration-none" href="/">Academic Prospectus</a> <br> <a
+                            class="text-decoration-none" href="/">Newsletter-July- December 2021</a><br><a
+                            class="text-decoration-none" href="/">Activities</a>
                     </div>
                     <div class="card-header"><strong>Quick Links</strong></div>
                     <div class="card-body">
-                        Department Of Architecture <br>
-                        Academic Prospectus Newsletter - July 2021| Archive Activities <br>
-                        Department of Planning <br>
-                        Academic Prospectus Newsletter-July- December 2021|Archive Activities <br>
+                        <ul class="list-unstyled">
+                            <li><a class="text-decoration-none" href="/">Lorem, ipsum.</a></li>
+                            <li><a class="text-decoration-none" href="/">Lorem, ipsum.</a></li>
+                            <li><a class="text-decoration-none" href="/">Lorem, ipsum.</a></li>
+                            <li><a class="text-decoration-none" href="/">Lorem, ipsum.</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
